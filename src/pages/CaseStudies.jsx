@@ -315,12 +315,12 @@ const CaseStudies = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: "Beauty & Personal Care", icon: <Zap className="w-8 h-8" />, count: "150+ brands" },
-              { name: "Electronics & Tech", icon: <BarChart3 className="w-8 h-8" />, count: "100+ brands" },
-              { name: "Home & Kitchen", icon: <ShoppingCart className="w-8 h-8" />, count: "120+ brands" },
-              { name: "Health & Wellness", icon: <Target className="w-8 h-8" />, count: "80+ brands" },
-              { name: "Sports & Outdoors", icon: <TrendingUp className="w-8 h-8" />, count: "60+ brands" },
-              { name: "Fashion & Apparel", icon: <Users className="w-8 h-8" />, count: "40+ brands" }
+              { name: "Beauty & Personal Care", icon: <Zap className="w-8 h-8" />, count: "15+ brands" },
+              { name: "Electronics & Tech", icon: <BarChart3 className="w-8 h-8" />, count: "10+ brands" },
+              { name: "Home & Kitchen", icon: <ShoppingCart className="w-8 h-8" />, count: "12+ brands" },
+              { name: "Health & Wellness", icon: <Target className="w-8 h-8" />, count: "8+ brands" },
+              { name: "Sports & Outdoors", icon: <TrendingUp className="w-8 h-8" />, count: "6+ brands" },
+              { name: "Fashion & Apparel", icon: <Users className="w-8 h-8" />, count: "4+ brands" }
             ].map((industry, index) => (
               <motion.div
                 key={industry.name}

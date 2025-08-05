@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
+import ContactForm from '../components/ContactForm';
 import { 
   ArrowRight, 
   Package, 
@@ -91,7 +92,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center hero-gradient relative overflow-hidden">
+      <section className="min-h-screen flex items-center hero-gradient relative overflow-hidden pt-16">
         <div className="absolute inset-0 bg-black/30"></div>
         
         {/* Floating 3D Objects */}
@@ -136,7 +137,7 @@ const Home = () => {
               className="text-white"
             >
               <h1 className="text-5xl lg:text-8xl font-bold mb-6 leading-tight">
-                We Help Small Brands
+                We Help Brands
                 <br />
                 <span className="gradient-text">
                   Grow & Dominate
@@ -187,7 +188,7 @@ const Home = () => {
               We Build Amazon Empires for Brands Ready to Scale
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-              Tim and Tony are Amazon business experts who work directly with brands to help them scale and succeed. We don't just consult — we buy wholesale, manage listings, protect brand reputation, and handle everything from A to Z.
+              Tim and Anton are Amazon business experts who work directly with brands to help them scale and succeed. We don't just consult — we buy wholesale, manage listings, protect brand reputation, and handle everything from A to Z.
             </p>
           </motion.div>
 
@@ -199,8 +200,8 @@ const Home = () => {
               viewport={{ once: true }}
               className="text-center stats-counter"
             >
-              <div className="text-4xl lg:text-6xl font-bold text-primary mb-2">500+</div>
-              <p className="text-muted-foreground">Brands Scaled</p>
+              <div className="text-4xl lg:text-6xl font-bold text-primary mb-2">50+</div>
+              <p className="text-muted-foreground">Brands from Different Industries</p>
             </motion.div>
 
             <motion.div
@@ -210,8 +211,8 @@ const Home = () => {
               viewport={{ once: true }}
               className="text-center stats-counter"
             >
-              <div className="text-4xl lg:text-6xl font-bold text-primary mb-2">$50M+</div>
-              <p className="text-muted-foreground">Revenue Generated</p>
+              <div className="text-4xl lg:text-6xl font-bold text-primary mb-2">$100M+</div>
+              <p className="text-muted-foreground">Lifetime Sales Generated</p>
             </motion.div>
 
             <motion.div
@@ -392,6 +393,9 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Contact Form */}
+      <ContactForm />
     </div>
   );
 };

@@ -9,9 +9,9 @@ import {
   X, 
   ChevronDown 
 } from 'lucide-react';
-import logo from '../assets/Bridge_Supply_Co_Logo_Modern_V3.png';
+import logo from '/bridge-supply-logo-new.png';
 
-const Navbar = ({ darkMode, toggleDarkMode }) => {
+const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const location = useLocation();
@@ -54,6 +54,13 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
               About
             </Link>
             
+            <Link 
+              to="/strategic-partnership" 
+              className={`text-white hover:text-gold-300 transition-colors font-semibold ${isActive('/strategic-partnership') ? 'text-gold-300' : ''}`}
+            >
+              Partnership
+            </Link>
+            
             {/* Services Dropdown */}
             <div 
               className="relative"
@@ -73,11 +80,14 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   className="absolute top-full left-0 mt-2 w-64 bg-black/90 backdrop-blur-md rounded-lg border border-white/10 shadow-xl"
+                  onMouseEnter={() => setServicesDropdownOpen(true)}
+                  onMouseLeave={() => setServicesDropdownOpen(false)}
                 >
                   <div className="py-2">
                     <Link 
                       to="/services" 
                       className="block px-4 py-2 text-white hover:bg-white/10 transition-colors"
+                      onClick={() => setServicesDropdownOpen(false)}
                     >
                       All Services
                     </Link>
@@ -87,6 +97,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                         key={service.id}
                         to={service.path}
                         className="block px-4 py-2 text-white hover:bg-white/10 transition-colors text-sm"
+                        onClick={() => setServicesDropdownOpen(false)}
                       >
                         {service.name}
                       </Link>
@@ -116,15 +127,6 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             >
               Contact
             </Link>
-            
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleDarkMode}
-              className="ml-4 text-white hover:bg-white/10"
-            >
-              {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-            </Button>
             
             <Button 
               size="sm" 
@@ -171,6 +173,13 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                 About
               </Link>
               <Link 
+                to="/strategic-partnership" 
+                className="block px-3 py-2 text-white hover:bg-gold-300/20 rounded-md font-semibold"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Partnership
+              </Link>
+              <Link 
                 to="/services" 
                 className="block px-3 py-2 text-white hover:bg-white/10 rounded-md"
                 onClick={() => setMobileMenuOpen(false)}
@@ -198,17 +207,6 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
               >
                 Contact
               </Link>
-              <div className="px-3 py-2">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={toggleDarkMode}
-                  className="w-full justify-start text-white"
-                >
-                  {darkMode ? <Sun className="w-4 h-4 mr-2" /> : <Moon className="w-4 h-4 mr-2" />}
-                  {darkMode ? 'Light Mode' : 'Dark Mode'}
-                </Button>
-              </div>
               <div className="px-3 py-2">
                 <Button 
                   size="sm" 

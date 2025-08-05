@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
+import ContactForm from '../components/ContactForm';
 import { 
   Package, 
   Target, 
@@ -588,6 +589,9 @@ const ServiceDetail = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Contact Form */}
+      <ContactForm />
     </div>
   );
 };

@@ -41,7 +41,7 @@ const Blog = () => {
       excerpt: "Step-by-step guide to identifying, reporting, and removing unauthorized sellers who are damaging your brand and stealing your sales.",
       category: "Brand Protection",
       readTime: "12 min read",
-      author: "Tony Martinez",
+      author: "Anton Sokolov",
       date: "March 10, 2025",
       featured: true,
       tags: ["Brand Protection", "Legal", "Strategy"],
@@ -65,7 +65,7 @@ const Blog = () => {
       excerpt: "Compare the pros and cons of Fulfillment by Amazon versus Fulfillment by Merchant to make the best choice for your business.",
       category: "Logistics",
       readTime: "6 min read",
-      author: "Tony Martinez",
+      author: "Anton Sokolov",
       date: "February 28, 2025",
       featured: false,
       tags: ["FBA", "FBM", "Logistics"],
@@ -110,46 +110,75 @@ const Blog = () => {
 
   const videos = [
     {
-      title: "Amazon Listing Optimization Masterclass",
-      duration: "45 min",
-      views: "12K views",
-      description: "Complete walkthrough of optimizing Amazon listings for maximum visibility and conversions.",
-      thumbnail: "🎯"
+      title: "FREE 6-Hour Amazon FBA Course",
+      duration: "6 hours",
+      views: "125K+ views",
+      description: "Complete A-Z blueprint for Amazon FBA beginners. Learn everything from product research to scaling your business.",
+      thumbnail: "/amazon_fba_course_thumbnail.png",
+      youtubeUrl: "https://www.youtube.com/watch?v=GYQerHdY5K4"
     },
     {
-      title: "PPC Strategy Deep Dive",
-      duration: "38 min",
-      views: "8.5K views",
-      description: "Advanced PPC strategies used by top Amazon sellers to scale profitably.",
-      thumbnail: "📊"
+      title: "Amazon Listing Optimization Secrets",
+      duration: "42 min",
+      views: "89K+ views",
+      description: "Advanced listing optimization strategies from analyzing 8000+ listings. Proven techniques to boost conversions.",
+      thumbnail: "/listing_optimization_thumbnail.png",
+      youtubeUrl: "https://www.youtube.com/watch?v=0yin3h1lCoM"
     },
     {
-      title: "Brand Protection Essentials",
-      duration: "25 min",
-      views: "6.2K views",
-      description: "How to protect your brand from unauthorized sellers and maintain pricing control.",
-      thumbnail: "🛡️"
+      title: "Amazon PPC Strategy Guide",
+      duration: "35 min",
+      views: "67K+ views",
+      description: "Master Amazon PPC advertising with proven strategies to lower ACoS and increase sales.",
+      thumbnail: "/ppc_strategy_thumbnail.png",
+      youtubeUrl: "https://www.youtube.com/watch?v=sQT3rk45ZfU"
+    },
+    {
+      title: "Product Launch Walkthrough",
+      duration: "28 min",
+      views: "54K+ views",
+      description: "Step-by-step Amazon product launch strategy. Learn how to rank your products fast and generate sales.",
+      thumbnail: "/product_launch_thumbnail.png",
+      youtubeUrl: "https://www.youtube.com/watch?v=GgI2EqJAAYg"
     }
   ];
 
   const podcasts = [
     {
-      title: "The Amazon Empire Podcast",
-      episode: "Episode 15: Scaling from $0 to $1M on Amazon",
-      duration: "52 min",
-      description: "Interview with a brand that went from zero to seven figures in 18 months using our strategies."
+      title: "Serious Sellers Podcast",
+      host: "Bradley Sutton (Helium 10)",
+      episode: "Latest Episode: Amazon Updates & Advanced Strategies",
+      duration: "45 min",
+      description: "The most comprehensive Amazon FBA podcast with actionable strategies, expert interviews, and real seller stories.",
+      spotifyUrl: "https://podcasts.apple.com/us/podcast/serious-sellers-podcast-learn-how-to-sell-on-amazon/id1453455876",
+      listeners: "100K+"
     },
     {
-      title: "The Amazon Empire Podcast",
-      episode: "Episode 14: Brand Protection Strategies That Work",
-      duration: "41 min",
-      description: "Deep dive into effective brand protection tactics and real-world case studies."
+      title: "The Full-Time FBA Show",
+      host: "Stephen & Rebecca Smotherman", 
+      episode: "Latest Episode: Scaling Your Amazon Business in 2024",
+      duration: "35 min",
+      description: "Real-world Amazon FBA strategies from successful sellers who've built multiple 6-figure businesses.",
+      spotifyUrl: "https://www.fulltimefba.com/podcast/",
+      listeners: "75K+"
     },
     {
-      title: "The Amazon Empire Podcast",
-      episode: "Episode 13: PPC Optimization Secrets",
-      duration: "48 min",
-      description: "Advanced PPC optimization techniques that top sellers use to maximize ROAS."
+      title: "AM/PM Podcast",
+      host: "Manny Coats & Tim Jordan",
+      episode: "Latest Episode: Advanced Amazon Selling Techniques",
+      duration: "60 min", 
+      description: "Advanced Amazon selling strategies with industry experts covering everything from product launches to exit strategies.",
+      spotifyUrl: "https://ampmpodcast.com/",
+      listeners: "85K+"
+    },
+    {
+      title: "Silent Sales Machine Radio",
+      host: "Jim Cockrum",
+      episode: "Latest Episode: Amazon Success Stories",
+      duration: "40 min",
+      description: "Long-running podcast featuring successful Amazon sellers sharing their strategies and real-world experiences.",
+      spotifyUrl: "https://silentsalesmachine.com/podcast/", 
+      listeners: "60K+"
     }
   ];
 
@@ -333,20 +362,28 @@ const Blog = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="hover-lift">
-                  <CardHeader>
-                    <div className="aspect-video bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-4xl mb-4">
-                      {video.thumbnail}
+                <Card className="hover-lift h-full flex flex-col">
+                  <CardHeader className="flex-grow">
+                    <div className="aspect-video rounded-lg overflow-hidden mb-4">
+                      <img 
+                        src={video.thumbnail} 
+                        alt={video.title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <CardTitle className="text-lg">{video.title}</CardTitle>
-                    <CardDescription>{video.description}</CardDescription>
+                    <CardDescription className="flex-grow">{video.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="mt-auto">
                     <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
                       <span>{video.duration}</span>
                       <span>{video.views}</span>
                     </div>
-                    <Button className="w-full" variant="outline">
+                    <Button 
+                      className="w-full" 
+                      variant="outline"
+                      onClick={() => window.open(video.youtubeUrl, '_blank')}
+                    >
                       <Play className="w-4 h-4 mr-2" />
                       Watch Now
                     </Button>
@@ -368,9 +405,9 @@ const Blog = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">The Amazon Empire Podcast</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Recommended Amazon Podcasts</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Weekly insights, interviews, and strategies from successful Amazon sellers and industry experts
+              Top-rated podcasts from industry experts that we recommend for staying updated with Amazon strategies and insights
             </p>
           </motion.div>
 
@@ -390,16 +427,25 @@ const Blog = () => {
                         <Headphones className="w-8 h-8 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-semibold text-lg">{podcast.episode}</h3>
+                        <h3 className="font-semibold text-lg">{podcast.title}</h3>
+                        <p className="text-sm text-primary font-medium">Hosted by {podcast.host}</p>
                         <p className="text-muted-foreground mt-1">{podcast.description}</p>
-                        <div className="flex items-center mt-2 text-sm text-muted-foreground">
-                          <Clock className="w-4 h-4 mr-1" />
-                          {podcast.duration}
+                        <div className="flex items-center mt-2 text-sm text-muted-foreground space-x-4">
+                          <div className="flex items-center">
+                            <Clock className="w-4 h-4 mr-1" />
+                            {podcast.duration}
+                          </div>
+                          <div className="flex items-center">
+                            <Users className="w-4 h-4 mr-1" />
+                            {podcast.listeners} listeners
+                          </div>
                         </div>
                       </div>
-                      <Button>
-                        <Play className="w-4 h-4 mr-2" />
-                        Listen
+                      <Button asChild>
+                        <a href={podcast.spotifyUrl} target="_blank" rel="noopener noreferrer">
+                          <Play className="w-4 h-4 mr-2" />
+                          Listen
+                        </a>
                       </Button>
                     </div>
                   </CardContent>

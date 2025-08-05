@@ -42,7 +42,7 @@ const About = () => {
     {
       year: "2018",
       title: "Founded Bridge Supply Co",
-      description: "Tim and Tony started with a vision to help small brands succeed on Amazon through strategic partnerships."
+      description: "Tim and Anton started with a vision to help small brands succeed on Amazon through strategic partnerships."
     },
     {
       year: "2019",
@@ -78,7 +78,7 @@ const About = () => {
             className="text-center"
           >
             <h1 className="text-5xl lg:text-7xl font-bold mb-6">
-              Meet Tim & Tony
+              Meet Tim & Anton
             </h1>
             <p className="text-xl lg:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
               Amazon business experts who work directly with brands to help them scale and succeed through strategic partnerships and proven methodologies.
@@ -102,7 +102,7 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-lg text-muted-foreground">
                 <p>
-                  Tim and Tony are Amazon business experts who work directly with brands to help them scale and succeed. 
+                  Tim and Anton are Amazon business experts who work directly with brands to help them scale and succeed. 
                   Their company focuses on wholesale purchasing, full-service Amazon brand management, and distribution growth.
                 </p>
                 <p>
