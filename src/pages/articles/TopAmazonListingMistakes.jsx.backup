@@ -1,0 +1,298 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ArrowLeft, Clock, User, Tag } from 'lucide-react';
+import { Button } from '../../components/ui/button';
+
+const TopAmazonListingMistakes = () => {
+  return (
+    <div className="min-h-screen pt-16">
+      {/* Hero Section */}
+      <section className="py-12 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Link to="/blog" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Resources
+            </Link>
+            
+            <div className="flex flex-wrap items-center gap-4 mb-6">
+              <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                <Tag className="w-3 h-3 inline mr-1" />
+                Listing Optimization
+              </span>
+              <div className="flex items-center text-white/80">
+                <Clock className="w-4 h-4 mr-1" />
+                8 min read
+              </div>
+              <div className="flex items-center text-white/80">
+                <User className="w-4 h-4 mr-1" />
+                Tim Johnson
+              </div>
+            </div>
+            
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+              Top 5 Amazon Listing Mistakes That Kill Your Sales
+            </h1>
+            <p className="text-xl opacity-90 max-w-3xl">
+              Discover the most common listing mistakes that prevent brands from reaching their full potential on Amazon and learn how to fix them.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Article Content */}
+      <section className="py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="prose prose-lg max-w-none"
+          >
+            <div className="text-lg leading-relaxed space-y-8">
+              <p className="text-xl text-muted-foreground mb-8">
+                Selling on Amazon is highly competitive, and even small listing mistakes can dramatically hurt your sales. A well-optimized product listing is essential for visibility in search results and for converting shoppers into buyers. Below we explore the top five listing mistakes that often undermine sales, and how you can avoid them to maximize your Amazon success.
+              </p>
+
+              <div className="bg-muted/50 p-6 rounded-lg mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">1. Poor Keyword Strategy (or Keyword Stuffing)</h3>
+                <p className="mb-4">
+                  One major mistake is handling keywords improperly — either by neglecting keyword research or by stuffing too many keywords unnaturally. Keywords are how customers find your product, so missing important search terms means losing traffic. Conversely, cramming irrelevant or repetitive keywords can make your content unreadable and even trigger Amazon errors.
+                </p>
+                <p className="mb-4">
+                  To avoid this, conduct thorough keyword research using Amazon's search suggestions or tools, and integrate relevant terms organically into your title, bullets, and backend search fields. Avoid keyword stuffing. Amazon's A9 algorithm values relevance and readability, so focus on high-volume, relevant keywords placed naturally.
+                </p>
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+                  <p className="text-sm font-medium text-yellow-800">
+                    <strong>Note:</strong> Amazon's new title policy limits most titles to 200 characters and forbids repeated words, effective Jan 2024, so plan keywords accordingly to stay compliant.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-muted/50 p-6 rounded-lg mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">2. Unoptimized or Non-Compliant Product Titles</h3>
+                <p className="mb-4">
+                  Your product title is the first thing shoppers see, and a mistake here can kill your click-through rate. Common errors include vague titles that don't describe the product well, or titles overstuffed with keywords and promotional text.
+                </p>
+                <p className="mb-4">
+                  Amazon has strict title guidelines: for example, titles should stay under 200 characters (and even shorter in some categories) and avoid special characters and fluff. A title that's too long or uses banned characters can result in suppression.
+                </p>
+                <p className="mb-4">
+                  To fix this, craft a clear, concise title that highlights the product's key features (brand, model, product type, size/color, etc.) in a readable way. Include one or two main keywords for SEO, but don't repeat words excessively. Remember, an informative title helps shoppers instantly understand your product, improving both visibility and conversion.
+                </p>
+              </div>
+
+              <div className="bg-muted/50 p-6 rounded-lg mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">3. Low-Quality or Insufficient Product Images</h3>
+                <p className="mb-4">
+                  Visuals sell on Amazon. Using poor-quality images or too few images is a critical mistake that can severely hurt your sales. Shoppers rely on images to judge product quality; if your photos are blurry, poorly lit, or fail to show important details, customers will likely scroll past.
+                </p>
+                <p className="mb-4">
+                  Amazon requires a clear, professional main image (with a pure white background) and recommends images be at least 1000 x 1000 pixels to enable the zoom feature. Listings with low-resolution or non-compliant images may even get flagged.
+                </p>
+                <p className="mb-4">
+                  Always upload multiple high-quality images: show the product from various angles, include close-ups of details, and if possible add a lifestyle image to help shoppers envision using the product. These practices build trust and can significantly improve conversion rates. Don't let poor images drive potential buyers away — invest in good photography or use Amazon's imaging services if needed.
+                </p>
+              </div>
+
+              <div className="bg-muted/50 p-6 rounded-lg mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">4. Weak Bullet Points and Descriptions</h3>
+                <p className="mb-4">
+                  Another sales-killing mistake is having product copy that doesn't sell the product. Bullet points and descriptions that are too generic, too technical without benefits, or riddled with errors will fail to convince shoppers.
+                </p>
+                <p className="mb-4">
+                  To avoid this, write compelling, benefit-driven bullets and descriptions. Highlight what makes your product special and how it solves the customer's problem. Use clear bullet points to call out top features and uses (customers often skim these). In the description, expand on features but focus on benefits — explain how the product improves the user's life or meets their needs.
+                </p>
+                <p className="mb-4">
+                  Also, ensure accuracy and consistency: the details in your listing should match the product to avoid confusing buyers. By providing relevant, persuasive information (and incorporating keywords naturally), you build customer confidence and encourage more conversions.
+                </p>
+              </div>
+
+              <div className="bg-muted/50 p-6 rounded-lg mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">5. Neglecting Reviews and Customer Feedback</h3>
+                <p className="mb-4">
+                  Finally, ignoring the importance of customer reviews is a mistake that can quietly kill your sales. Many sellers focus on the listing content but forget that reviews and ratings greatly influence conversion and even search ranking. A product with few or poor reviews will struggle to sell, as shoppers heavily weigh the experiences of others.
+                </p>
+                <p className="mb-4">
+                  While you cannot directly control reviews, you can encourage satisfied customers to leave feedback (within Amazon's rules) and you can engage with reviews. Not responding to negative reviews or questions is a missed opportunity — an unanswered critical review might deter new buyers.
+                </p>
+                <p className="mb-4">
+                  Amazon actually rewards listings with good review health; positive reviews can boost your organic ranking and credibility. So make it part of your process to request reviews ethically (e.g. using Amazon's "Request a Review" button or inserts that comply with policy) and to respond to customer feedback.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-r from-purple-100 to-blue-100 p-8 rounded-lg mt-12">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Advanced Strategies</h3>
+                
+                <h4 className="text-xl font-semibold mb-3 text-gray-800">The Nuances of a Poor Keyword Strategy</h4>
+                <p className="mb-4">
+                  A flawed keyword strategy is not just about missing a few terms; it's about a fundamental misunderstanding of how Amazon's A9 algorithm works. The algorithm's primary goal is to present the most relevant products to customers to maximize conversions.
+                </p>
+                
+                <div className="grid md:grid-cols-2 gap-6 mt-6">
+                  <div className="bg-white p-4 rounded-lg">
+                    <h5 className="font-semibold mb-2 text-red-600">Common Pitfalls:</h5>
+                    <ul className="list-disc list-inside space-y-2 text-sm">
+                      <li>Ignoring Long-Tail Keywords</li>
+                      <li>Misunderstanding Keyword Placement</li>
+                      <li>Neglecting Competitor Analysis</li>
+                      <li>Failing to Update Strategy</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg">
+                    <h5 className="font-semibold mb-2 text-green-600">Best Practices:</h5>
+                    <ul className="list-disc list-inside space-y-2 text-sm">
+                      <li>Focus on 3+ word phrases</li>
+                      <li>Prioritize title keywords</li>
+                      <li>Analyze competitor listings</li>
+                      <li>Regular performance reviews</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <h4 className="text-xl font-semibold mb-3 mt-6 text-gray-800">The Psychology of Product Images</h4>
+                <p className="mb-4">
+                  In the world of e-commerce, images are your product's body language. They communicate quality, features, and value in a way that words cannot. Your image block should tell a complete story about your product.
+                </p>
+                
+                <div className="bg-white p-4 rounded-lg">
+                  <h5 className="font-semibold mb-2">Complete Image Strategy:</h5>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <ul className="list-disc list-inside space-y-1 text-sm">
+                      <li>Crystal-clear main image</li>
+                      <li>Multiple angles</li>
+                      <li>Close-up details</li>
+                      <li>Scale and dimensions</li>
+                    </ul>
+                    <ul className="list-disc list-inside space-y-1 text-sm">
+                      <li>Lifestyle images</li>
+                      <li>Infographics</li>
+                      <li>Before and after</li>
+                      <li>Product videos</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-primary text-white p-8 rounded-lg mt-12">
+                <h3 className="text-2xl font-bold mb-4">Bottom Line</h3>
+                <p className="text-lg">
+                  Audit your Amazon listings for these common mistakes. Ensuring proper keywords, a clear title, high-quality images, compelling copy, and solid review management will protect your sales from avoidable losses. By avoiding these listing "landmines" and following Amazon's style guidelines, you set your product up for better visibility and conversion — ultimately boosting your sales instead of undermining them.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-muted/50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl font-bold mb-6">Need Help Optimizing Your Listings?</h3>
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Our team of Amazon experts can audit your listings and implement these optimizations for you. 
+              Get a free consultation to see how we can improve your sales.
+            </p>
+            <Button size="lg" asChild>
+              <Link to="/contact">
+                Get Free Listing Audit
+              </Link>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="prose prose-lg max-w-none"
+          >
+            <p className="text-xl text-muted-foreground mb-8">
+              Selling on Amazon is highly competitive, and even small listing mistakes can dramatically hurt your sales. A well-optimized product listing is essential for visibility in search results and for converting shoppers into buyers. Below we explore the top five listing mistakes that often undermine sales, and how you can avoid them to maximize your Amazon success.
+            </p>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6">1. Poor Keyword Strategy (or Keyword Stuffing)</h2>
+            <p className="mb-6">
+              One major mistake is handling keywords improperly — either by neglecting keyword research or by stuffing too many keywords unnaturally. Keywords are how customers find your product, so missing important search terms means losing traffic. Conversely, cramming irrelevant or repetitive keywords can make your content unreadable and even trigger Amazon errors.
+            </p>
+            <p className="mb-6">
+              To avoid this, conduct thorough keyword research using Amazon's search suggestions or tools, and integrate relevant terms organically into your title, bullets, and backend search fields. Avoid keyword stuffing. Amazon's A9 algorithm values relevance and readability, so focus on high-volume, relevant keywords placed naturally.
+            </p>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6">2. Unoptimized or Non-Compliant Product Titles</h2>
+            <p className="mb-6">
+              Your product title is the first thing shoppers see, and a mistake here can kill your click-through rate. Common errors include vague titles that don't describe the product well, or titles overstuffed with keywords and promotional text. Amazon has strict title guidelines: for example, titles should stay under 200 characters and avoid special characters and fluff.
+            </p>
+            <p className="mb-6">
+              A title that's too long or uses banned characters can result in suppression. To fix this, craft a clear, concise title that highlights the product's key features (brand, model, product type, size/color, etc.) in a readable way. Include one or two main keywords for SEO, but don't repeat words excessively.
+            </p>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6">3. Low-Quality or Insufficient Product Images</h2>
+            <p className="mb-6">
+              Visuals sell on Amazon. Using poor-quality images or too few images is a critical mistake that can severely hurt your sales. Shoppers rely on images to judge product quality; if your photos are blurry, poorly lit, or fail to show important details, customers will likely scroll past.
+            </p>
+            <p className="mb-6">
+              Amazon requires a clear, professional main image (with a pure white background) and recommends images be at least 1000 x 1000 pixels to enable the zoom feature. Always upload multiple high-quality images: show the product from various angles, include close-ups of details, and if possible add a lifestyle image to help shoppers envision using the product.
+            </p>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6">4. Weak Bullet Points and Descriptions</h2>
+            <p className="mb-6">
+              Another sales-killing mistake is having product copy that doesn't sell the product. Bullet points and descriptions that are too generic, too technical without benefits, or riddled with errors will fail to convince shoppers. To avoid this, write compelling, benefit-driven bullets and descriptions.
+            </p>
+            <p className="mb-6">
+              Highlight what makes your product special and how it solves the customer's problem. Use clear bullet points to call out top features and uses (customers often skim these). In the description, expand on features but focus on benefits — explain how the product improves the user's life or meets their needs.
+            </p>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6">5. Neglecting Reviews and Customer Feedback</h2>
+            <p className="mb-6">
+              Finally, ignoring the importance of customer reviews is a mistake that can quietly kill your sales. Many sellers focus on the listing content but forget that reviews and ratings greatly influence conversion and even search ranking. A product with few or poor reviews will struggle to sell, as shoppers heavily weigh the experiences of others.
+            </p>
+            <p className="mb-6">
+              While you cannot directly control reviews, you can encourage satisfied customers to leave feedback (within Amazon's rules) and you can engage with reviews. Make it part of your process to request reviews ethically and to respond to customer feedback. Thank customers for positive reviews and professionally address any issues raised in negative ones.
+            </p>
+
+            <div className="bg-muted p-8 rounded-lg mt-12">
+              <h3 className="text-2xl font-bold mb-4">Bottom Line</h3>
+              <p className="mb-4">
+                Audit your Amazon listings for these common mistakes. Ensuring proper keywords, a clear title, high-quality images, compelling copy, and solid review management will protect your sales from avoidable losses.
+              </p>
+              <p>
+                By avoiding these listing "landmines" and following Amazon's style guidelines, you set your product up for better visibility and conversion — ultimately boosting your sales instead of undermining them.
+              </p>
+            </div>
+
+            <div className="mt-12 pt-8 border-t">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg">
+                  <Link to="/contact">
+                    Get Professional Listing Optimization
+                  </Link>
+                </Button>
+                <Button variant="outline" size="lg" asChild>
+                  <Link to="/blog">
+                    Read More Articles
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default TopAmazonListingMistakes;
+

@@ -1,0 +1,371 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ArrowLeft, Clock, User, Tag } from 'lucide-react';
+import { Button } from '../../components/ui/button';
+
+const RemoveUnauthorizedSellers = () => {
+  return (
+    <div className="min-h-screen pt-16">
+      {/* Hero Section */}
+      <section className="py-12 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Link to="/blog" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Resources
+            </Link>
+            
+            <div className="flex flex-wrap items-center gap-4 mb-6">
+              <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                <Tag className="w-3 h-3 inline mr-1" />
+                Brand Protection
+              </span>
+              <div className="flex items-center text-white/80">
+                <Clock className="w-4 h-4 mr-1" />
+                12 min read
+              </div>
+              <div className="flex items-center text-white/80">
+                <User className="w-4 h-4 mr-1" />
+                Anton Sokolov
+              </div>
+            </div>
+            
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+              How to Remove Unauthorized Sellers: A Complete Guide
+            </h1>
+            <p className="text-xl opacity-90 max-w-3xl">
+              Step-by-step guide to identifying, reporting, and removing unauthorized sellers who are damaging your brand and stealing your sales.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Article Content */}
+      <section className="py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="prose prose-lg max-w-none"
+          >
+            <div className="text-lg leading-relaxed space-y-8">
+              <p className="text-xl text-muted-foreground mb-8">
+                Unauthorized sellers — those who sell your products on Amazon without your permission — can be a nightmare for brand owners. These sellers may be listing counterfeit goods, gray-market imports, or genuine products obtained through unofficial channels. The result? They undercut your pricing, siphon off the Buy Box, potentially sell inferior quality items, and damage your brand's reputation.
+              </p>
+
+              <div className="bg-red-50 border-l-4 border-red-400 p-6 mb-8">
+                <h3 className="text-xl font-bold mb-3 text-red-800">Understanding the Threat</h3>
+                <p className="text-red-700">
+                  Unauthorized third-party sellers come in many forms — from outright counterfeiters peddling fake versions of your product, to grey-market dealers who acquire your items through unsanctioned distribution channels. They pose serious problems by undercutting prices, stealing the Buy Box, and damaging customer trust.
+                </p>
+              </div>
+
+              <div className="bg-muted/50 p-6 rounded-lg mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Step 1: Identify Unauthorized Sellers</h3>
+                <p className="mb-4">
+                  The first step is vigilance. Regularly monitor your Amazon product listings for any sellers that you don't recognize or haven't authorized. Check the "Other Sellers on Amazon" section for offers on your ASIN.
+                </p>
+                <div className="bg-white p-4 rounded-lg mt-4">
+                  <h4 className="font-semibold mb-2">Signs of Unauthorized Sellers:</h4>
+                  <ul className="list-disc list-inside space-y-2">
+                    <li>Suspiciously low prices</li>
+                    <li>Seller names that are unfamiliar or vague</li>
+                    <li>Inconsistent product packaging reported by customers</li>
+                    <li>Poor seller ratings or feedback</li>
+                  </ul>
+                </div>
+                <p className="mt-4">
+                  Many brand owners perform routine test buys — purchasing the product from a suspected unauthorized seller — to verify if it's genuine or to gather evidence of policy violations. Document everything: take screenshots, note seller IDs and product condition.
+                </p>
+              </div>
+
+              <div className="bg-muted/50 p-6 rounded-lg mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Step 2: Contact the Seller</h3>
+                <p className="mb-4">
+                  Sometimes, a direct approach can resolve the issue. Contact the unauthorized seller through Amazon's messaging system to notify them that they are not authorized to sell your products.
+                </p>
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h4 className="font-semibold mb-2 text-blue-800">Professional Communication Tips:</h4>
+                  <ul className="list-disc list-inside space-y-2 text-blue-700">
+                    <li>Be professional but firm</li>
+                    <li>Inform them you are the brand owner</li>
+                    <li>Request they cease selling and remove their offer</li>
+                    <li>Keep records of all communication</li>
+                    <li>Avoid threats you're not prepared to carry out</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-muted/50 p-6 rounded-lg mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Step 3: Amazon Brand Registry</h3>
+                <p className="mb-4">
+                  If your brand isn't already enrolled in Amazon Brand Registry, enrolling is a game-changer for brand protection. Brand Registry gives you access to tools to help detect and report listing abuse and IP infringements.
+                </p>
+                
+                <div className="grid md:grid-cols-2 gap-6 mt-6">
+                  <div className="bg-white p-4 rounded-lg">
+                    <h4 className="font-semibold mb-2 text-green-600">Brand Registry Tools:</h4>
+                    <ul className="list-disc list-inside space-y-2 text-sm">
+                      <li>Report a Violation tool</li>
+                      <li>Project Zero (direct removal)</li>
+                      <li>Transparency program</li>
+                      <li>Brand Gating</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg">
+                    <h4 className="font-semibold mb-2 text-purple-600">How to Report:</h4>
+                    <ul className="list-disc list-inside space-y-2 text-sm">
+                      <li>Log in to Brand Registry</li>
+                      <li>Go to Protect section</li>
+                      <li>Choose "Report a Violation"</li>
+                      <li>Provide evidence and details</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-muted/50 p-6 rounded-lg mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Step 4: Enforce Pricing Policies</h3>
+                <p className="mb-4">
+                  Unauthorized sellers often thrive because they obtain products cheaply and undercut your pricing. Implementing a Minimum Advertised Price (MAP) policy for your brand can help.
+                </p>
+                
+                <div className="bg-yellow-50 p-4 rounded-lg">
+                  <h4 className="font-semibold mb-2 text-yellow-800">MAP Policy Benefits:</h4>
+                  <ul className="list-disc list-inside space-y-2 text-yellow-700">
+                    <li>Legal basis to pressure resellers violating pricing</li>
+                    <li>Helps identify unauthorized sellers</li>
+                    <li>Protects brand value and authorized dealers</li>
+                    <li>Maintains pricing stability across channels</li>
+                  </ul>
+                </div>
+
+                <p className="mt-4">
+                  Additionally, tighten up your distribution channels. Unauthorized sellers often get inventory through leaks in the supply chain. By selecting only reputable distributors and auditing where your product is going, you can cut off the source that feeds unauthorized Amazon resellers.
+                </p>
+              </div>
+
+              <div className="bg-muted/50 p-6 rounded-lg mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Step 5: Anti-Counterfeit Measures</h3>
+                <p className="mb-4">
+                  If counterfeits are a concern, Amazon has specific measures to handle this. Use the "Report a Violation" tool to specifically report items as counterfeit, providing Amazon with as much proof as possible.
+                </p>
+                
+                <div className="grid md:grid-cols-3 gap-4 mt-6">
+                  <div className="bg-white p-4 rounded-lg text-center">
+                    <h4 className="font-semibold mb-2 text-red-600">Project Zero</h4>
+                    <p className="text-sm">Self-service removal tool for instant takedown of counterfeit listings</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg text-center">
+                    <h4 className="font-semibold mb-2 text-blue-600">Transparency</h4>
+                    <p className="text-sm">Unique QR codes on products to verify authenticity</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg text-center">
+                    <h4 className="font-semibold mb-2 text-green-600">Brand Gating</h4>
+                    <p className="text-sm">Requires approval for new sellers to list your products</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-muted/50 p-6 rounded-lg mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Step 6: Legal Action as Last Resort</h3>
+                <p className="mb-4">
+                  When Amazon's channels aren't enough or a particular rogue seller keeps coming back, you may need to escalate externally. Cease-and-desist letters from an attorney can sometimes prompt stubborn unauthorized sellers to back off.
+                </p>
+                
+                <div className="bg-red-50 p-4 rounded-lg">
+                  <h4 className="font-semibold mb-2 text-red-800">Legal Options:</h4>
+                  <ul className="list-disc list-inside space-y-2 text-red-700">
+                    <li>Cease-and-desist letters</li>
+                    <li>Trademark infringement claims</li>
+                    <li>Unfair competition lawsuits</li>
+                    <li>Court orders for listing removal</li>
+                  </ul>
+                </div>
+                
+                <p className="mt-4 text-sm text-muted-foreground">
+                  <strong>Note:</strong> This route is expensive and time-consuming, but may be necessary for persistent violators causing significant damage to your brand.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-r from-purple-100 to-blue-100 p-8 rounded-lg mt-12">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Advanced Protection Strategies</h3>
+                
+                <h4 className="text-xl font-semibold mb-3 text-gray-800">Types of Unauthorized Sellers</h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-white p-4 rounded-lg">
+                    <h5 className="font-semibold mb-2 text-red-600">High Risk:</h5>
+                    <ul className="list-disc list-inside space-y-1 text-sm">
+                      <li>Counterfeiters (fake products)</li>
+                      <li>Listing hijackers</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg">
+                    <h5 className="font-semibold mb-2 text-orange-600">Medium Risk:</h5>
+                    <ul className="list-disc list-inside space-y-1 text-sm">
+                      <li>Gray market sellers</li>
+                      <li>Arbitrageurs/liquidators</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <h4 className="text-xl font-semibold mb-3 mt-6 text-gray-800">Automated Monitoring</h4>
+                <p className="mb-4">
+                  For serious brand protection, invest in third-party software that continuously scans Amazon for unauthorized sellers. These tools can alert you to new sellers, price drops, and Buy Box changes in real-time.
+                </p>
+                
+                <div className="bg-white p-4 rounded-lg">
+                  <h5 className="font-semibold mb-2">Test Buy Best Practices:</h5>
+                  <ul className="list-disc list-inside space-y-1 text-sm">
+                    <li>Document everything with screenshots</li>
+                    <li>Preserve all packaging and shipping materials</li>
+                    <li>Photograph any discrepancies</li>
+                    <li>Keep order confirmations and receipts</li>
+                    <li>Compare to genuine products</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-primary text-white p-8 rounded-lg mt-12">
+                <h3 className="text-2xl font-bold mb-4">Bottom Line</h3>
+                <p className="text-lg">
+                  Protecting your brand from unauthorized sellers requires a multi-faceted approach combining proactive monitoring, Amazon's brand protection tools, strategic communication, and when necessary, legal action. The key is to act quickly and systematically to maintain control over your brand's presence on Amazon.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-muted/50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl font-bold mb-6">Need Help Protecting Your Brand?</h3>
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Our brand protection experts can help you identify and remove unauthorized sellers, 
+              implement monitoring systems, and protect your Amazon presence.
+            </p>
+            <Button size="lg" asChild>
+              <Link to="/contact">
+                Get Brand Protection Consultation
+              </Link>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="prose prose-lg max-w-none"
+          >
+            <p className="text-xl text-muted-foreground mb-8">
+              Unauthorized sellers — those who sell your products on Amazon without your permission — can be a nightmare for brand owners. These sellers may be listing counterfeit goods, gray-market imports, or genuine products obtained through unofficial channels. The result? They undercut your pricing, siphon off the Buy Box, potentially sell inferior quality items, and damage your brand's reputation.
+            </p>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6">Understanding the Threat of Unauthorized Sellers</h2>
+            <p className="mb-6">
+              Unauthorized third-party sellers come in many forms — from outright counterfeiters peddling fake versions of your product, to grey-market dealers who acquire your items through unsanctioned distribution channels. There are even listing hijackers who piggyback on your legitimate ASIN, and liquidators or arbitrage sellers who resell discounted stock without approval.
+            </p>
+            <p className="mb-6">
+              Regardless of type, they pose serious problems: they often undercut prices (violating MAP policies and triggering price wars), steal the Buy Box from authorized sellers, and can wreak havoc on customer trust if the products are subpar or not as described. Amazon's platform is customer-focused, so an unhappy buyer who received a bad product from an unauthorized seller might leave negative reviews — and your brand takes the hit.
+            </p>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6">Step 1: Identify Unauthorized Sellers on Your Listing</h2>
+            <p className="mb-6">
+              The first step is vigilance. Regularly monitor your Amazon product listings for any sellers that you don't recognize or haven't authorized. Check the "Other Sellers on Amazon" section for offers on your ASIN. Signs of unauthorized sellers can include suspiciously low prices, seller names that are unfamiliar or vague, or inconsistent product packaging reported by customers.
+            </p>
+            <p className="mb-6">
+              Many brand owners perform routine test buys — purchasing the product from a suspected unauthorized seller — to verify if it's genuine or to gather evidence of policy violations. You can also use Amazon brand monitoring tools or third-party services that send alerts when new sellers appear on your listings.
+            </p>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6">Step 2: Contact the Seller and Send a Warning</h2>
+            <p className="mb-6">
+              Sometimes, a direct approach can resolve the issue. Contact the unauthorized seller through Amazon's messaging system to notify them that they are not authorized to sell your products. You can do this by visiting the seller's profile page and clicking "Ask a question" or the equivalent contact link.
+            </p>
+            <p className="mb-6">
+              In your message, be professional but firm: inform them that you are the brand owner (or authorized distributor) and that they are listing your trademarked product without permission. Request that they cease selling your item and remove their offer. In some cases, this gentle nudge is enough, especially if the seller is a small arbitrageur who doesn't want trouble.
+            </p>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6">Step 3: Enroll in Amazon Brand Registry and Use Its Tools</h2>
+            <p className="mb-6">
+              If your brand isn't already enrolled in Amazon Brand Registry, enrolling is a game-changer for brand protection. Brand Registry (available to owners of registered trademarks) gives you access to tools to help detect and report listing abuse and IP infringements.
+            </p>
+            <p className="mb-6">
+              Once you are in the program, you can take advantage of Amazon's "Report a Violation" tool to report unauthorized sellers for intellectual property violations. For example, if someone is using your trademark in their listing or selling counterfeit units, you can file a trademark infringement claim via this interface.
+            </p>
+            <p className="mb-6">
+              Beyond direct reporting, Brand Registry offers other programs to combat unauthorized sellers: Project Zero (which empowers brands to directly remove counterfeit listings) and Transparency (a program where you apply unique codes on your products to ensure only authentic units are sold).
+            </p>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6">Step 4: Enforce Pricing and Distribution Policies</h2>
+            <p className="mb-6">
+              Unauthorized sellers often thrive because they obtain products cheaply and undercut your pricing. Implementing a Minimum Advertised Price (MAP) policy for your brand can help. A MAP policy is an agreement that your authorized dealers won't advertise or sell below a certain price.
+            </p>
+            <p className="mb-6">
+              Additionally, tighten up your distribution channels. Unauthorized sellers often get inventory through leaks in the supply chain (distributors selling excess stock to liquidators, for example). By selecting only reputable, committed distributors and auditing where your product is going, you can cut off the source that feeds unauthorized Amazon resellers.
+            </p>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6">Step 5: Use Amazon's Anti-Counterfeit Measures</h2>
+            <p className="mb-6">
+              If counterfeits are a concern (e.g., customers report fake versions of your product being sold), Amazon has specific measures to handle this. One is the "Report a Violation" tool mentioned earlier, where you would specifically report items as counterfeit. Provide Amazon as much proof as possible: differences between the fake and real product, results of any test buys, etc.
+            </p>
+            <p className="mb-6">
+              If you are enrolled in Project Zero, use its self-service removal tool to instantly take down counterfeit listings. Also, consider using Amazon Transparency: enrolling your products means each unit gets a unique QR code that Amazon scans before delivery, weeding out units that don't match.
+            </p>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6">Step 6: Legal Action as a Last Resort</h2>
+            <p className="mb-6">
+              When Amazon's channels aren't enough or a particular rogue seller keeps coming back, you may need to escalate externally. Cease-and-desist letters from an attorney can sometimes prompt stubborn unauthorized sellers to back off. The letter should assert your intellectual property rights (trademark, etc.), state that the recipient is selling your product without authorization, and demand they stop immediately or face further action.
+            </p>
+            <p className="mb-6">
+              Some sellers, especially smaller ones, will comply to avoid legal trouble. However, be aware that truly nefarious actors might ignore these letters — many hide behind anonymous business names or P.O. boxes, making enforcement tricky.
+            </p>
+
+            <div className="bg-muted p-8 rounded-lg mt-12">
+              <h3 className="text-2xl font-bold mb-4">Key Takeaways</h3>
+              <ul className="space-y-2">
+                <li>• Monitor your listings regularly for unauthorized sellers</li>
+                <li>• Use Amazon Brand Registry tools for IP protection</li>
+                <li>• Implement MAP policies and tighten distribution</li>
+                <li>• Document everything for potential legal action</li>
+                <li>• Consider Amazon's anti-counterfeit programs</li>
+              </ul>
+            </div>
+
+            <div className="mt-12 pt-8 border-t">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg">
+                  <Link to="/contact">
+                    Get Brand Protection Help
+                  </Link>
+                </Button>
+                <Button variant="outline" size="lg" asChild>
+                  <Link to="/blog">
+                    Read More Articles
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default RemoveUnauthorizedSellers;
+

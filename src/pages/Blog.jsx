@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
@@ -33,6 +32,7 @@ const Blog = () => {
       date: "March 15, 2025",
       featured: true,
       tags: ["SEO", "Conversion", "Best Practices"],
+      link: "/articles/top-amazon-listing-mistakes",
       content: "Learn about the critical mistakes that can destroy your Amazon listing performance, including poor keyword research, weak bullet points, missing A+ content, inadequate images, and ignoring customer reviews. We'll show you exactly how to fix each issue and optimize for maximum conversions."
     },
     {
@@ -45,6 +45,7 @@ const Blog = () => {
       date: "March 10, 2025",
       featured: true,
       tags: ["Brand Protection", "Legal", "Strategy"],
+      link: "/articles/remove-unauthorized-sellers",
       content: "Comprehensive guide covering brand registry setup, unauthorized seller identification, enforcement strategies, legal options, and ongoing monitoring to protect your brand from unauthorized resellers and maintain pricing control."
     },
     {
@@ -57,7 +58,8 @@ const Blog = () => {
       date: "March 5, 2025",
       featured: true,
       tags: ["PPC", "Strategy", "ROI"],
-      content: "Everything you need to know before starting Amazon PPC, including campaign types, keyword research, budget planning, bid strategies, and performance metrics. Avoid common pitfalls and set yourself up for advertising success from day one."
+      link: "/articles/amazon-advertising",
+      content: "Master the fundamentals of Amazon advertising before you spend a dime. Learn about campaign types, keyword research, bidding strategies, and optimization techniques that will help you achieve profitable ROAS from day one."
     },
     {
       id: 4,
@@ -69,7 +71,39 @@ const Blog = () => {
       date: "February 28, 2025",
       featured: false,
       tags: ["FBA", "FBM", "Logistics"],
+      link: "/articles/amazon-fba-vs-fbm",
       content: "Detailed comparison of FBA and FBM options, including costs, benefits, control levels, and which option works best for different types of products and business models."
+    }
+  ];
+
+  const downloadResources = [
+    {
+      title: "Amazon Seller's Complete Handbook",
+      description: "Comprehensive 50-page guide covering everything from account setup to advanced optimization strategies.",
+      downloadCount: "2,500+",
+      format: "PDF",
+      fileName: "Amazon_Seller_Complete_Handbook_Augmented.pdf"
+    },
+    {
+      title: "Product Launch Checklist",
+      description: "Step-by-step checklist to ensure your product launches are successful and optimized from day one.",
+      downloadCount: "1,800+",
+      format: "PDF",
+      fileName: "Product_Launch_Checklist_Augmented.pdf"
+    },
+    {
+      title: "PPC Campaign Templates",
+      description: "Ready-to-use campaign structures and templates for Sponsored Products, Brands, and Display ads.",
+      downloadCount: "1,200+",
+      format: "Excel",
+      fileName: "PPC_Campaign_Templates_Augmented.pdf"
+    },
+    {
+      title: "Amazon Profitability Calculator",
+      description: "Calculate your true profitability on Amazon including all fees, advertising costs, and operational expenses.",
+      downloadCount: "3,100+",
+      format: "Excel",
+      fileName: "Amazon_Profitability_Calculator_Augmented.pdf"
     }
   ];
 
@@ -77,34 +111,30 @@ const Blog = () => {
     {
       type: "guide",
       icon: <FileText className="w-6 h-6" />,
-      title: "Amazon Seller's Complete Handbook",
-      description: "Comprehensive 50-page guide covering everything from account setup to advanced optimization strategies.",
-      downloadCount: "2,500+ downloads",
-      format: "PDF"
-    },
-    {
-      type: "checklist",
-      icon: <BookOpen className="w-6 h-6" />,
-      title: "Product Launch Checklist",
-      description: "Step-by-step checklist to ensure your product launches are successful and optimized from day one.",
-      downloadCount: "1,800+ downloads",
-      format: "PDF"
+      title: "Comprehensive Guides",
+      count: "15+ guides",
+      description: "In-depth guides covering every aspect of Amazon selling"
     },
     {
       type: "template",
       icon: <Target className="w-6 h-6" />,
-      title: "PPC Campaign Templates",
-      description: "Ready-to-use campaign structures and templates for Sponsored Products, Brands, and Display ads.",
-      downloadCount: "1,200+ downloads",
-      format: "Excel"
+      title: "Ready-to-Use Templates",
+      count: "25+ templates",
+      description: "Proven templates for listings, PPC campaigns, and more"
     },
     {
-      type: "calculator",
-      icon: <TrendingUp className="w-6 h-6" />,
-      title: "Amazon Profitability Calculator",
-      description: "Calculate your true profitability on Amazon including all fees, advertising costs, and operational expenses.",
-      downloadCount: "3,100+ downloads",
-      format: "Excel"
+      type: "tool",
+      icon: <Zap className="w-6 h-6" />,
+      title: "Calculators & Tools",
+      count: "10+ tools",
+      description: "Essential calculators for profitability and ROI analysis"
+    },
+    {
+      type: "checklist",
+      icon: <Shield className="w-6 h-6" />,
+      title: "Action Checklists",
+      count: "20+ checklists",
+      description: "Step-by-step checklists to ensure nothing is missed"
     }
   ];
 
@@ -114,71 +144,38 @@ const Blog = () => {
       duration: "6 hours",
       views: "125K+ views",
       description: "Complete A-Z blueprint for Amazon FBA beginners. Learn everything from product research to scaling your business.",
-      thumbnail: "/amazon_fba_course_thumbnail.png",
-      youtubeUrl: "https://www.youtube.com/watch?v=GYQerHdY5K4"
+      thumbnail: "/api/placeholder/400/225"
     },
     {
-      title: "Amazon Listing Optimization Secrets",
-      duration: "42 min",
+      title: "Advanced PPC Strategies That Actually Work",
+      duration: "45 min",
       views: "89K+ views",
-      description: "Advanced listing optimization strategies from analyzing 8000+ listings. Proven techniques to boost conversions.",
-      thumbnail: "/listing_optimization_thumbnail.png",
-      youtubeUrl: "https://www.youtube.com/watch?v=0yin3h1lCoM"
+      description: "Advanced Amazon PPC tactics used by 7-figure sellers to dominate their categories and maximize profitability.",
+      thumbnail: "/api/placeholder/400/225"
     },
     {
-      title: "Amazon PPC Strategy Guide",
-      duration: "35 min",
+      title: "Brand Protection Masterclass",
+      duration: "1.5 hours",
       views: "67K+ views",
-      description: "Master Amazon PPC advertising with proven strategies to lower ACoS and increase sales.",
-      thumbnail: "/ppc_strategy_thumbnail.png",
-      youtubeUrl: "https://www.youtube.com/watch?v=sQT3rk45ZfU"
-    },
-    {
-      title: "Product Launch Walkthrough",
-      duration: "28 min",
-      views: "54K+ views",
-      description: "Step-by-step Amazon product launch strategy. Learn how to rank your products fast and generate sales.",
-      thumbnail: "/product_launch_thumbnail.png",
-      youtubeUrl: "https://www.youtube.com/watch?v=GgI2EqJAAYg"
+      description: "Everything you need to know about protecting your brand on Amazon, from trademark registration to enforcement.",
+      thumbnail: "/api/placeholder/400/225"
     }
   ];
 
   const podcasts = [
     {
-      title: "Serious Sellers Podcast",
-      host: "Bradley Sutton (Helium 10)",
-      episode: "Latest Episode: Amazon Updates & Advanced Strategies",
-      duration: "45 min",
-      description: "The most comprehensive Amazon FBA podcast with actionable strategies, expert interviews, and real seller stories.",
-      spotifyUrl: "https://podcasts.apple.com/us/podcast/serious-sellers-podcast-learn-how-to-sell-on-amazon/id1453455876",
-      listeners: "100K+"
+      title: "The Amazon Empire Podcast",
+      episode: "Episode 47: Scaling to 8-Figures",
+      duration: "52 min",
+      description: "Interview with a brand that went from $0 to $10M in revenue on Amazon in just 18 months.",
+      plays: "45K+ plays"
     },
     {
-      title: "The Full-Time FBA Show",
-      host: "Stephen & Rebecca Smotherman", 
-      episode: "Latest Episode: Scaling Your Amazon Business in 2024",
-      duration: "35 min",
-      description: "Real-world Amazon FBA strategies from successful sellers who've built multiple 6-figure businesses.",
-      spotifyUrl: "https://www.fulltimefba.com/podcast/",
-      listeners: "75K+"
-    },
-    {
-      title: "AM/PM Podcast",
-      host: "Manny Coats & Tim Jordan",
-      episode: "Latest Episode: Advanced Amazon Selling Techniques",
-      duration: "60 min", 
-      description: "Advanced Amazon selling strategies with industry experts covering everything from product launches to exit strategies.",
-      spotifyUrl: "https://ampmpodcast.com/",
-      listeners: "85K+"
-    },
-    {
-      title: "Silent Sales Machine Radio",
-      host: "Jim Cockrum",
-      episode: "Latest Episode: Amazon Success Stories",
-      duration: "40 min",
-      description: "Long-running podcast featuring successful Amazon sellers sharing their strategies and real-world experiences.",
-      spotifyUrl: "https://silentsalesmachine.com/podcast/", 
-      listeners: "60K+"
+      title: "Brand Protection Deep Dive",
+      episode: "Episode 44: Fighting Counterfeiters",
+      duration: "38 min",
+      description: "Real case study of how we helped a client remove 200+ unauthorized sellers and recover $2M in lost revenue.",
+      plays: "32K+ plays"
     }
   ];
 
@@ -186,26 +183,20 @@ const Blog = () => {
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
           >
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6">
+            <h1 className="text-5xl lg:text-6xl font-bold mb-6">
               Resources & Insights
             </h1>
             <p className="text-xl lg:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
               Free resources, guides, and expert insights to help you master Amazon and scale your brand. 
               Learn from our experience helping 500+ brands achieve remarkable growth.
             </p>
-            <Button 
-              size="lg" 
-              variant="secondary" 
-              className="bg-white text-purple-600 hover:bg-gray-100"
-              asChild
-            >
+            <Button size="lg" variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100" asChild>
               <Link to="/contact">
                 Get Personalized Advice <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
@@ -214,8 +205,8 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Featured Articles */}
-      <section className="py-20 bg-background">
+      {/* Latest Articles */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -230,8 +221,8 @@ const Blog = () => {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {articles.map((article, index) => (
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            {articles.filter(article => article.featured).map((article, index) => (
               <motion.div
                 key={article.id}
                 initial={{ opacity: 0, y: 50 }}
@@ -239,41 +230,87 @@ const Blog = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className={`h-full hover-lift ${article.featured ? 'ring-2 ring-primary' : ''}`}>
-                  {article.featured && (
-                    <div className="bg-primary text-primary-foreground px-3 py-1 text-sm font-semibold">
-                      Featured Article
-                    </div>
-                  )}
+                <Card className="h-full hover-lift">
                   <CardHeader>
-                    <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center justify-between mb-4">
                       <Badge variant="secondary">{article.category}</Badge>
                       <div className="flex items-center text-sm text-muted-foreground">
                         <Clock className="w-4 h-4 mr-1" />
                         {article.readTime}
                       </div>
                     </div>
-                    <CardTitle className="text-xl">{article.title}</CardTitle>
-                    <CardDescription>{article.excerpt}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <CardTitle className="text-2xl mb-3">{article.title}</CardTitle>
+                    <CardDescription className="text-base">{article.excerpt}</CardDescription>
+                    <div className="flex flex-wrap gap-2 mt-4">
                       {article.tags.map((tag) => (
                         <Badge key={tag} variant="outline" className="text-xs">
                           {tag}
                         </Badge>
                       ))}
                     </div>
+                  </CardHeader>
+                  <CardContent>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center text-sm text-muted-foreground">
                         <User className="w-4 h-4 mr-1" />
                         {article.author}
+                        <span className="mx-2">•</span>
+                        {article.date}
                       </div>
-                      <span className="text-sm text-muted-foreground">{article.date}</span>
+                      <Button asChild>
+                        <Link to={article.link}>
+                          Read Article <ArrowRight className="ml-2 w-4 h-4" />
+                        </Link>
+                      </Button>
                     </div>
-                    <Button className="w-full mt-4" variant="outline">
-                      Read Article <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {articles.filter(article => !article.featured).map((article, index) => (
+              <motion.div
+                key={article.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full hover-lift">
+                  <CardHeader>
+                    <div className="flex items-center justify-between mb-4">
+                      <Badge variant="secondary">{article.category}</Badge>
+                      <div className="flex items-center text-sm text-muted-foreground">
+                        <Clock className="w-4 h-4 mr-1" />
+                        {article.readTime}
+                      </div>
+                    </div>
+                    <CardTitle className="text-xl mb-3">{article.title}</CardTitle>
+                    <CardDescription>{article.excerpt}</CardDescription>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {article.tags.map((tag) => (
+                        <Badge key={tag} variant="outline" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center text-sm text-muted-foreground">
+                        <User className="w-4 h-4 mr-1" />
+                        {article.author}
+                        <span className="mx-2">•</span>
+                        {article.date}
+                      </div>
+                      <Button asChild>
+                        <Link to={article.link}>
+                          Read Article <ArrowRight className="ml-2 w-4 h-4" />
+                        </Link>
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -282,7 +319,7 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Free Resources */}
+      {/* Free Downloads */}
       <section className="py-20 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -299,7 +336,7 @@ const Blog = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {resources.map((resource, index) => (
+            {downloadResources.map((resource, index) => (
               <motion.div
                 key={resource.title}
                 initial={{ opacity: 0, y: 50 }}
@@ -307,15 +344,15 @@ const Blog = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="hover-lift">
+                <Card className="hover-lift h-full">
                   <CardHeader>
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                        {resource.icon}
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <FileText className="w-6 h-6 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-xl">{resource.title}</CardTitle>
-                        <CardDescription className="mt-2">{resource.description}</CardDescription>
+                        <CardTitle className="text-xl mb-2">{resource.title}</CardTitle>
+                        <CardDescription>{resource.description}</CardDescription>
                       </div>
                     </div>
                   </CardHeader>
@@ -325,10 +362,22 @@ const Blog = () => {
                         {resource.downloadCount} • {resource.format}
                       </div>
                       <Button size="sm" asChild>
-                        <Link to="/contact">
+                        <a 
+                          href={`/downloads/${resource.fileName}`} 
+                          download
+                          onClick={(e) => {
+                            // Force download
+                            const link = document.createElement('a');
+                            link.href = `/downloads/${resource.fileName}`;
+                            link.download = resource.fileName;
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                          }}
+                        >
                           <Download className="w-4 h-4 mr-2" />
                           Download Free
-                        </Link>
+                        </a>
                       </Button>
                     </div>
                   </CardContent>
@@ -339,8 +388,8 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Video Content */}
-      <section className="py-20 bg-background">
+      {/* Educational Videos */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -364,31 +413,27 @@ const Blog = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="hover-lift h-full flex flex-col">
-                  <CardHeader className="flex-grow">
-                    <div className="aspect-video rounded-lg overflow-hidden mb-4">
-                      <img 
-                        src={video.thumbnail} 
-                        alt={video.title}
-                        className="w-full h-full object-cover"
-                      />
+                <Card className="hover-lift">
+                  <div className="relative">
+                    <div className="aspect-video bg-muted rounded-t-lg flex items-center justify-center">
+                      <Play className="w-12 h-12 text-primary" />
                     </div>
+                    <div className="absolute bottom-2 right-2 bg-black/80 text-white px-2 py-1 rounded text-sm">
+                      {video.duration}
+                    </div>
+                  </div>
+                  <CardHeader>
                     <CardTitle className="text-lg">{video.title}</CardTitle>
-                    <CardDescription className="flex-grow">{video.description}</CardDescription>
+                    <CardDescription>{video.description}</CardDescription>
                   </CardHeader>
-                  <CardContent className="mt-auto">
-                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
-                      <span>{video.duration}</span>
-                      <span>{video.views}</span>
+                  <CardContent>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">{video.views}</span>
+                      <Button size="sm" variant="outline">
+                        <Play className="w-4 h-4 mr-2" />
+                        Watch Now
+                      </Button>
                     </div>
-                    <Button 
-                      asChild
-                      className="w-full"
-                    >
-                      <a href={video.youtubeUrl} target="_blank" rel="noopener noreferrer">
-                        Watch Video <Play className="ml-2 w-4 h-4" />
-                      </a>
-                    </Button>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -397,7 +442,7 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Podcast Content */}
+      {/* Podcast Episodes */}
       <section className="py-20 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -407,9 +452,9 @@ const Blog = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Top Podcasts</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Podcast Episodes</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Listen to industry leaders and gain valuable insights on Amazon selling
+              Listen to real success stories and expert insights on the go
             </p>
           </motion.div>
 
@@ -422,33 +467,30 @@ const Blog = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="hover-lift h-full flex flex-col">
-                  <CardHeader className="flex-grow">
-                    <div className="flex items-start space-x-4 mb-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                        <Headphones className="w-6 h-6" />
+                <Card className="hover-lift">
+                  <CardHeader>
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Headphones className="w-6 h-6 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-xl">{podcast.title}</CardTitle>
-                        <CardDescription className="mt-1 text-muted-foreground">Host: {podcast.host}</CardDescription>
-                        <CardDescription className="mt-2">{podcast.episode}</CardDescription>
+                        <CardTitle className="text-lg mb-1">{podcast.title}</CardTitle>
+                        <p className="text-sm text-muted-foreground mb-2">{podcast.episode}</p>
+                        <CardDescription>{podcast.description}</CardDescription>
                       </div>
                     </div>
-                    <CardDescription className="flex-grow">{podcast.description}</CardDescription>
                   </CardHeader>
-                  <CardContent className="mt-auto">
-                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
-                      <span>{podcast.duration}</span>
-                      <span>{podcast.listeners} listeners</span>
+                  <CardContent>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                        <span>{podcast.duration}</span>
+                        <span>{podcast.plays}</span>
+                      </div>
+                      <Button size="sm" variant="outline">
+                        <Play className="w-4 h-4 mr-2" />
+                        Listen Now
+                      </Button>
                     </div>
-                    <Button 
-                      asChild
-                      className="w-full"
-                    >
-                      <a href={podcast.spotifyUrl} target="_blank" rel="noopener noreferrer">
-                        Listen Now <Play className="ml-2 w-4 h-4" />
-                      </a>
-                    </Button>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -467,20 +509,32 @@ const Blog = () => {
             viewport={{ once: true }}
             className="text-white"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Ready to Dominate Amazon?</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Ready to Scale Your Brand?</h2>
             <p className="text-xl mb-8 opacity-90">
-              Let's discuss how we can take full control of your Amazon presence and scale your business to new heights.
+              Get personalized strategies and hands-on support from our Amazon experts.
             </p>
-            <Button 
-              size="lg" 
-              variant="secondary" 
-              className="bg-white text-purple-600 hover:bg-gray-100"
-              asChild
-            >
-              <Link to="/contact">
-                Book Free Strategy Call <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="bg-white text-purple-600 hover:bg-gray-100"
+                asChild
+              >
+                <Link to="/contact">
+                  Book Free Strategy Call <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white text-white hover:bg-white/10"
+                asChild
+              >
+                <Link to="/about">
+                  Learn About Us
+                </Link>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -489,5 +543,4 @@ const Blog = () => {
 };
 
 export default Blog;
-
 
