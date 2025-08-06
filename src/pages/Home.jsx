@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import ContactForm from '../components/ContactForm';
+
+import BookingModal from '../components/BookingModal';
 import { 
   ArrowRight, 
   Package, 
@@ -21,6 +22,7 @@ import {
 } from 'lucide-react';
 
 const Home = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const services = [
     {
       icon: <Package className="w-8 h-8" />,
@@ -162,11 +164,9 @@ const Home = () => {
                   size="lg" 
                   variant="outline" 
                   className="border-white/30 text-white hover:bg-white/10 rounded-full px-8"
-                  asChild
+                  onClick={() => setIsBookingModalOpen(true)}
                 >
-                  <Link to="/contact">
-                    Book Free Audit
-                  </Link>
+                  Book Free Audit
                 </Button>
               </div>
             </motion.div>
@@ -201,7 +201,7 @@ const Home = () => {
               className="text-center stats-counter"
             >
               <div className="text-4xl lg:text-6xl font-bold text-primary mb-2">50+</div>
-              <p className="text-muted-foreground">Brands from Different Industries</p>
+              <p className="text-foreground font-medium">Brands from Different Industries</p>
             </motion.div>
 
             <motion.div
@@ -212,7 +212,7 @@ const Home = () => {
               className="text-center stats-counter"
             >
               <div className="text-4xl lg:text-6xl font-bold text-primary mb-2">$100M+</div>
-              <p className="text-muted-foreground">Lifetime Sales Generated</p>
+              <p className="text-foreground font-medium">Lifetime Sales Generated</p>
             </motion.div>
 
             <motion.div
@@ -223,7 +223,7 @@ const Home = () => {
               className="text-center stats-counter"
             >
               <div className="text-4xl lg:text-6xl font-bold text-primary mb-2">98%</div>
-              <p className="text-muted-foreground">Client Satisfaction</p>
+              <p className="text-foreground font-medium">Client Satisfaction</p>
             </motion.div>
 
             <motion.div
@@ -234,7 +234,7 @@ const Home = () => {
               className="text-center stats-counter"
             >
               <div className="text-4xl lg:text-6xl font-bold text-primary mb-2">24/7</div>
-              <p className="text-muted-foreground">Support Available</p>
+              <p className="text-foreground font-medium">Support Available</p>
             </motion.div>
           </div>
         </div>
@@ -264,19 +264,20 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                className="flex"
               >
-                <Card className="service-card h-full">
-                  <CardHeader>
+                <Card className="service-card h-full w-full flex flex-col">
+                  <CardHeader className="flex-grow">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary">
                       {service.icon}
                     </div>
-                    <CardTitle>{service.title}</CardTitle>
+                    <CardTitle className="text-lg">{service.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base mb-4">
+                  <CardContent className="flex flex-col justify-between">
+                    <CardDescription className="text-base mb-4 flex-grow">
                       {service.description}
                     </CardDescription>
-                    <Button variant="outline" size="sm" asChild>
+                    <Button variant="outline" size="sm" asChild className="mt-auto">
                       <Link to={service.link}>
                         Learn More <ArrowRight className="ml-2 w-4 h-4" />
                       </Link>
@@ -394,11 +395,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Contact Form */}
-      <ContactForm />
+      <BookingModal 
+        isOpen={isBookingModalOpen} 
+        onClose={() => setIsBookingModalOpen(false)} 
+      />
     </div>
   );
 };
 
 export default Home;
-

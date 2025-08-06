@@ -11,7 +11,7 @@ import {
   Linkedin, 
   Instagram 
 } from 'lucide-react';
-import logo from '../assets/Bridge_Supply_Co_Logo_Modern_V3.png';
+import logo from '../assets/justlogo.png';
 
 const Footer = () => {
   return (
@@ -92,7 +92,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground">
                 <MapPin className="w-4 h-4" />
-                <span className="text-sm">123 Business Ave, Suite 100, City, State 12345</span>
+                <span className="text-sm">3038 SW 42 St, Fort Lauderdale, FL, 33312</span>
               </div>
             </div>
           </div>

@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
-import { 
-  BookOpen, 
-  Download, 
-  Play, 
-  Clock, 
-  User, 
+import {
+  BookOpen,
+  Download,
+  Play,
+  Clock,
+  User,
   ArrowRight,
   FileText,
   Video,
@@ -380,12 +380,12 @@ const Blog = () => {
                       <span>{video.views}</span>
                     </div>
                     <Button 
-                      className="w-full" 
-                      variant="outline"
-                      onClick={() => window.open(video.youtubeUrl, '_blank')}
+                      asChild
+                      className="w-full"
                     >
-                      <Play className="w-4 h-4 mr-2" />
-                      Watch Now
+                      <a href={video.youtubeUrl} target="_blank" rel="noopener noreferrer">
+                        Watch Video <Play className="ml-2 w-4 h-4" />
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -395,7 +395,7 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Podcast Section */}
+      {/* Podcast Content */}
       <section className="py-20 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -405,49 +405,48 @@ const Blog = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Recommended Amazon Podcasts</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Top Podcasts</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Top-rated podcasts from industry experts that we recommend for staying updated with Amazon strategies and insights
+              Listen to industry leaders and gain valuable insights on Amazon selling
             </p>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {podcasts.map((podcast, index) => (
               <motion.div
-                key={podcast.episode}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                key={podcast.title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="hover-lift">
-                  <CardContent className="p-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Headphones className="w-8 h-8 text-primary" />
+                <Card className="hover-lift h-full flex flex-col">
+                  <CardHeader className="flex-grow">
+                    <div className="flex items-start space-x-4 mb-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                        <Headphones className="w-6 h-6" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-semibold text-lg">{podcast.title}</h3>
-                        <p className="text-sm text-primary font-medium">Hosted by {podcast.host}</p>
-                        <p className="text-muted-foreground mt-1">{podcast.description}</p>
-                        <div className="flex items-center mt-2 text-sm text-muted-foreground space-x-4">
-                          <div className="flex items-center">
-                            <Clock className="w-4 h-4 mr-1" />
-                            {podcast.duration}
-                          </div>
-                          <div className="flex items-center">
-                            <Users className="w-4 h-4 mr-1" />
-                            {podcast.listeners} listeners
-                          </div>
-                        </div>
+                        <CardTitle className="text-xl">{podcast.title}</CardTitle>
+                        <CardDescription className="mt-1 text-muted-foreground">Host: {podcast.host}</CardDescription>
+                        <CardDescription className="mt-2">{podcast.episode}</CardDescription>
                       </div>
-                      <Button asChild>
-                        <a href={podcast.spotifyUrl} target="_blank" rel="noopener noreferrer">
-                          <Play className="w-4 h-4 mr-2" />
-                          Listen
-                        </a>
-                      </Button>
                     </div>
+                    <CardDescription className="flex-grow">{podcast.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="mt-auto">
+                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
+                      <span>{podcast.duration}</span>
+                      <span>{podcast.listeners} listeners</span>
+                    </div>
+                    <Button 
+                      asChild
+                      className="w-full"
+                    >
+                      <a href={podcast.spotifyUrl} target="_blank" rel="noopener noreferrer">
+                        Listen Now <Play className="ml-2 w-4 h-4" />
+                      </a>
+                    </Button>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -456,7 +455,7 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Newsletter Signup */}
+      {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -466,28 +465,20 @@ const Blog = () => {
             viewport={{ once: true }}
             className="text-white"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Stay Updated</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Ready to Dominate Amazon?</h2>
             <p className="text-xl mb-8 opacity-90">
-              Get the latest Amazon strategies, tips, and insights delivered to your inbox every week. 
-              Join 10,000+ sellers who trust our expertise.
+              Let's discuss how we can take full control of your Amazon presence and scale your business to new heights.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="flex-1 px-4 py-3 rounded-lg text-gray-900"
-              />
-              <Button 
-                size="lg" 
-                variant="secondary" 
-                className="bg-white text-purple-600 hover:bg-gray-100"
-              >
-                Subscribe
-              </Button>
-            </div>
-            <p className="text-sm opacity-75 mt-4">
-              No spam. Unsubscribe anytime. We respect your privacy.
-            </p>
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="bg-white text-purple-600 hover:bg-gray-100"
+              asChild
+            >
+              <Link to="/contact">
+                Book Free Strategy Call <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
           </motion.div>
         </div>
       </section>
@@ -496,4 +487,5 @@ const Blog = () => {
 };
 
 export default Blog;
+
 

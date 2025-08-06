@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import BookingModal from '../components/BookingModal';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Label } from '../components/ui/label';
 import { 
@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 
 const Contact = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -134,6 +135,7 @@ const Contact = () => {
                 size="lg" 
                 variant="secondary" 
                 className="bg-white text-purple-600 hover:bg-gray-100"
+                onClick={() => setIsBookingModalOpen(true)}
               >
                 <Calendar className="mr-2 w-5 h-5" />
                 Book Free Strategy Call
@@ -143,173 +145,11 @@ const Contact = () => {
                 variant="outline" 
                 className="border-white text-white hover:bg-white/10"
               >
-                <MessageSquare className="mr-2 w-5 h-5" />
-                Send Message
+                <Phone className="mr-2 w-5 h-5" />
+                Call Now: 1-800-BRIDGE-1
               </Button>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Contact Form & Info */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">Get in Touch</CardTitle>
-                  <CardDescription>
-                    Tell us about your brand and goals. We'll get back to you within 24 hours with a customized strategy.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="name">Full Name *</Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          placeholder="Your full name"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor="email">Email Address *</Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          placeholder="your@email.com"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="company">Company Name</Label>
-                        <Input
-                          id="company"
-                          name="company"
-                          value={formData.company}
-                          onChange={handleInputChange}
-                          placeholder="Your company name"
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor="website">Website/Brand</Label>
-                        <Input
-                          id="website"
-                          name="website"
-                          value={formData.website}
-                          onChange={handleInputChange}
-                          placeholder="www.yourwebsite.com"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="monthlyRevenue">Current Monthly Revenue</Label>
-                      <select
-                        id="monthlyRevenue"
-                        name="monthlyRevenue"
-                        value={formData.monthlyRevenue}
-                        onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background"
-                      >
-                        <option value="">Select revenue range</option>
-                        <option value="0-10k">$0 - $10,000</option>
-                        <option value="10k-50k">$10,000 - $50,000</option>
-                        <option value="50k-100k">$50,000 - $100,000</option>
-                        <option value="100k-500k">$100,000 - $500,000</option>
-                        <option value="500k+">$500,000+</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="message">Tell us about your goals *</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        placeholder="What are your main goals for Amazon? What challenges are you facing? How can we help you scale?"
-                        rows={4}
-                        required
-                      />
-                    </div>
-
-                    <Button type="submit" size="lg" className="w-full">
-                      <Send className="mr-2 w-5 h-5" />
-                      Send Message
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Contact Information */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
-                <div className="grid gap-6">
-                  {contactInfo.map((info, index) => (
-                    <Card key={info.title} className="hover-lift">
-                      <CardContent className="p-6">
-                        <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                            {info.icon}
-                          </div>
-                          <div>
-                            <h3 className="font-semibold text-lg">{info.title}</h3>
-                            <p className="text-primary font-medium">{info.content}</p>
-                            <p className="text-sm text-muted-foreground">{info.description}</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Why Choose Us?</h3>
-                <div className="space-y-3">
-                  {[
-                    "500+ brands successfully scaled",
-                    "$50M+ in revenue generated for clients",
-                    "98% client satisfaction rate",
-                    "24/7 support and monitoring",
-                    "Proven track record of results",
-                    "Full-service Amazon management"
-                  ].map((benefit, index) => (
-                    <div key={index} className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                      <span>{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </section>
 
@@ -356,7 +196,7 @@ const Contact = () => {
                         <span className="text-sm text-muted-foreground">Price:</span>
                         <span className="font-semibold text-green-600">{service.price}</span>
                       </div>
-                      <Button className="w-full">
+                      <Button className="w-full" onClick={() => setIsBookingModalOpen(true)}>
                         <Calendar className="mr-2 w-4 h-4" />
                         Book Now
                       </Button>
@@ -427,6 +267,7 @@ const Contact = () => {
                 size="lg" 
                 variant="secondary" 
                 className="bg-white text-purple-600 hover:bg-gray-100"
+                onClick={() => setIsBookingModalOpen(true)}
               >
                 <Calendar className="mr-2 w-5 h-5" />
                 Book Free Strategy Call
@@ -440,6 +281,7 @@ const Contact = () => {
                 Call Now: 1-800-BRIDGE-1
               </Button>
             </div>
+
           </motion.div>
         </div>
       </section>
