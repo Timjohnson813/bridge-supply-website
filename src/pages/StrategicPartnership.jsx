@@ -309,8 +309,8 @@ const StrategicPartnership = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
-                  <CardHeader className="pb-2">
+                <Card className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-2 h-full flex flex-col">
+                  <CardHeader className="pb-2 flex-shrink-0">
                     <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-3 text-white">
                       {service.icon}
                     </div>
@@ -318,8 +318,8 @@ const StrategicPartnership = () => {
                       {service.title}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <CardDescription>
+                  <CardContent className="flex-grow flex flex-col">
+                    <CardDescription className="flex-grow">
                       {service.description}
                     </CardDescription>
                   </CardContent>
