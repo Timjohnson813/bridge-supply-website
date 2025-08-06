@@ -156,7 +156,7 @@ const Home = () => {
                   className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full px-8 pulse-button glow-effect"
                   asChild
                 >
-                  <Link to="/contact">
+                  <Link to="/contact" className="text-white">
                     Let's Scale Your Brand <ArrowRight className="ml-2 w-5 h-5" />
                   </Link>
                 </Button>
@@ -267,17 +267,17 @@ const Home = () => {
                 className="flex"
               >
                 <Card className="service-card h-full w-full flex flex-col">
-                  <CardHeader className="flex-grow">
+                  <CardHeader className="flex-shrink-0">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary">
                       {service.icon}
                     </div>
                     <CardTitle className="text-lg">{service.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="flex flex-col justify-between">
+                  <CardContent className="flex flex-col flex-grow">
                     <CardDescription className="text-base mb-4 flex-grow">
                       {service.description}
                     </CardDescription>
-                    <Button variant="outline" size="sm" asChild className="mt-auto">
+                    <Button variant="outline" size="sm" asChild className="mt-auto self-start">
                       <Link to={service.link}>
                         Learn More <ArrowRight className="ml-2 w-4 h-4" />
                       </Link>

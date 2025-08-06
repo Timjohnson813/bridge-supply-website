@@ -324,9 +324,11 @@ const Blog = () => {
                       <div className="text-sm text-muted-foreground">
                         {resource.downloadCount} • {resource.format}
                       </div>
-                      <Button size="sm">
-                        <Download className="w-4 h-4 mr-2" />
-                        Download Free
+                      <Button size="sm" asChild>
+                        <Link to="/contact">
+                          <Download className="w-4 h-4 mr-2" />
+                          Download Free
+                        </Link>
                       </Button>
                     </div>
                   </CardContent>

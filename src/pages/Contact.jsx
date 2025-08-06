@@ -140,14 +140,6 @@ const Contact = () => {
                 <Calendar className="mr-2 w-5 h-5" />
                 Book Free Strategy Call
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white/10"
-              >
-                <Phone className="mr-2 w-5 h-5" />
-                Call Now: 1-800-BRIDGE-1
-              </Button>
             </div>
           </motion.div>
         </div>

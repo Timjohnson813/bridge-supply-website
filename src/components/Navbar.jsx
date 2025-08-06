@@ -6,25 +6,13 @@ import {
   Sun, 
   Moon, 
   Menu, 
-  X, 
-  ChevronDown 
+  X 
 } from 'lucide-react';
 import logo from '/bridge-supply-logo-new.png';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const location = useLocation();
-
-  const services = [
-    { id: 'listing-creation', name: 'Amazon Listing Creation', path: '/services/listing-creation' },
-    { id: 'amazon-advertising', name: 'Amazon Advertising', path: '/services/amazon-advertising' },
-    { id: 'brand-management', name: 'Full Amazon Brand Management', path: '/services/brand-management' },
-    { id: 'brand-protection', name: 'Brand Protection', path: '/services/brand-protection' },
-    { id: 'logistics', name: 'Logistics & Inventory', path: '/services/logistics' },
-    { id: 'distributor-search', name: 'Distributor Search', path: '/services/distributor-search' },
-    { id: 'reputation-building', name: 'Brand Reputation Building', path: '/services/reputation-building' }
-  ];
 
   const isActive = (path) => location.pathname === path;
 
@@ -61,51 +49,12 @@ const Navbar = () => {
               Partnership
             </Link>
             
-            {/* Services Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setServicesDropdownOpen(true)}
-              onMouseLeave={() => setServicesDropdownOpen(false)}
+            <Link 
+              to="/services" 
+              className={`text-white hover:text-purple-300 transition-colors ${location.pathname.startsWith('/services') ? 'text-purple-300' : ''}`}
             >
-              <Link 
-                to="/services" 
-                className={`flex items-center text-white hover:text-purple-300 transition-colors ${location.pathname.startsWith('/services') ? 'text-purple-300' : ''}`}
-              >
-                Services <ChevronDown className="ml-1 w-4 h-4" />
-              </Link>
-              
-              {servicesDropdownOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  className="absolute top-full left-0 mt-2 w-64 bg-black/90 backdrop-blur-md rounded-lg border border-white/10 shadow-xl"
-                  onMouseEnter={() => setServicesDropdownOpen(true)}
-                  onMouseLeave={() => setServicesDropdownOpen(false)}
-                >
-                  <div className="py-2">
-                    <Link 
-                      to="/services" 
-                      className="block px-4 py-2 text-white hover:bg-white/10 transition-colors"
-                      onClick={() => setServicesDropdownOpen(false)}
-                    >
-                      All Services
-                    </Link>
-                    <div className="border-t border-white/10 my-2"></div>
-                    {services.map((service) => (
-                      <Link
-                        key={service.id}
-                        to={service.path}
-                        className="block px-4 py-2 text-white hover:bg-white/10 transition-colors text-sm"
-                        onClick={() => setServicesDropdownOpen(false)}
-                      >
-                        {service.name}
-                      </Link>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </div>
+              Services
+            </Link>
             
             <Link 
               to="/case-studies" 

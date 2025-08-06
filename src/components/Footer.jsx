@@ -4,7 +4,6 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { 
   Mail, 
-  Phone, 
   MapPin, 
   Facebook, 
   Twitter, 
@@ -25,7 +24,7 @@ const Footer = () => {
               <span className="text-lg font-bold">Bridge Supply Co.</span>
             </div>
             <p className="text-muted-foreground">
-              We help small brands grow and dominate on Amazon through full-service brand management and strategic partnerships.
+              We help brands grow and dominate on Amazon through full-service brand management and strategic partnerships.
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="sm" className="p-2">
@@ -85,10 +84,6 @@ const Footer = () => {
               <div className="flex items-center space-x-2 text-muted-foreground">
                 <Mail className="w-4 h-4" />
                 <span className="text-sm">accounts@bridgesupplyco.com</span>
-              </div>
-              <div className="flex items-center space-x-2 text-muted-foreground">
-                <Phone className="w-4 h-4" />
-                <span className="text-sm">+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground">
                 <MapPin className="w-4 h-4" />
