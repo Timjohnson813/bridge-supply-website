@@ -11,4 +11,10 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    allowedHosts: [
+      "5173-i7fg9k3mc29dycf8hmk4a-fac64bd0.manus.computer"
+    ]
+  }
 })
+
