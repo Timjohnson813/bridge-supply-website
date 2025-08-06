@@ -383,7 +383,7 @@ const Home = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white/10"
+                className="border-white text-white hover:bg-white hover:text-purple-600 transition-colors"
                 asChild
               >
                 <Link to="/about">
